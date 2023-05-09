@@ -1,0 +1,27 @@
+const buttons = document.querySelectorAll(".ripple");
+
+const clearCircles = function () {
+  const circle = document.querySelector(".circle");
+  circle.remove();
+};
+
+buttons.forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    const x = e.clientX;
+    const y = e.clientY;
+    const buttonTop = e.target.offsetTop;
+    const buttonLeft = e.target.offsetLeft;
+
+    const xInside = x - buttonLeft;
+    const yInside = y - buttonTop;
+    // console.log(xInside, yInside);
+    const circle = document.createElement("span");
+    circle.classList.add("circle");
+    circle.style.top = yInside + "px";
+    circle.style.left = xInside + "px";
+    btn.appendChild(circle);
+
+    console.log(buttons);
+    setTimeout(clearCircles, 5000);
+  });
+});
