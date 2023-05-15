@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rebeccapurple;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.btn {
+  color: rebeccapurple;
+  background-color: #fff;
+  border: none;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+
+#toasts {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  transition: all 08s ease;
+}
+
+.toast {
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+}
+
+.fadeout {
+  opacity: 0 !important;
+  transform: translateY(10px);
+  transition: all 0.8s ease;
+}
+.visible {
+  transform: translateY(-10px);
+  opacity: 1;
+}
+
+.toast.purple {
+  color: rebeccapurple;
+}
+.toast.red {
+  color: red;
+}
+.toast.green {
+  color: green;
+}
+.toast.grey {
+  color: #aaa;
+}
